@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".MainTrainer">
+
+    <ImageView
+        android:id="@+id/wellDone"
+        android:layout_width="229dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="144dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correctImage"
+        app:layout_constraintVertical_bias="0.666"
+        app:srcCompat="@drawable/welldone" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/myGrid"
+        android:layout_width="235dp"
+        android:layout_height="206dp"
+        android:layout_marginBottom="212dp"
+        app:columnCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rowCount="2">
+
+        <Button
+            android:id="@+id/answer1"
+            android:layout_width="120dp"
+            android:layout_height="96dp"
+            android:background="@android:color/holo_green_light"
+            android:onClick="chooseAnswer"
+            android:tag="0"
+            android:text="26"
+            android:textSize="40sp"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/answer2"
+            android:layout_width="120dp"
+            android:layout_height="96dp"
+            android:background="@android:color/holo_orange_light"
+            android:onClick="chooseAnswer"
+            android:tag="1"
+            android:text="14"
+            android:textSize="40sp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/answer3"
+            android:layout_width="120dp"
+            android:layout_height="96dp"
+            android:background="@android:color/holo_blue_light"
+            android:onClick="chooseAnswer"
+            android:tag="2"
+            android:text="36"
+            android:textSize="40sp"
+            app:layout_column="0"
+            app:layout_row="1" />
+
+        <Button
+            android:id="@+id/answer4"
+            android:layout_width="120dp"
+            android:layout_height="96dp"
+            android:background="@android:color/holo_purple"
+            android:onClick="chooseAnswer"
+            android:tag="3"
+            android:text="11"
+            android:textSize="40sp"
+            app:layout_column="1"
+            app:layout_row="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/scoreBoard"
+        android:layout_width="113dp"
+        android:layout_height="37dp"
+        android:gravity="center_horizontal"
+        android:text="5 / 12"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.645"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056"
+        app:srcCompat="@drawable/crown" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="53dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063"
+        app:srcCompat="@drawable/timer" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="91dp"
+        android:layout_height="45dp"
+        android:gravity="center_horizontal"
+        android:text="30s"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myQuestions"
+        android:layout_width="260dp"
+        android:layout_height="95dp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timerText"
+        app:layout_constraintVertical_bias="0.107">
+
+        <TextView
+            android:id="@+id/questions"
+            android:layout_width="205dp"
+            android:layout_height="65dp"
+            android:gravity="center_horizontal"
+            android:text="11 + 15"
+            android:textColor="@android:color/background_dark"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.511" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/correctImage"
+        android:layout_width="124dp"
+        android:layout_height="86dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreBoard"
+        app:layout_constraintVertical_bias="0.758"
+        app:srcCompat="@drawable/correct" />
+
+    <ImageView
+        android:id="@+id/wrongImage"
+        android:layout_width="125dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="144dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correctImage"
+        app:layout_constraintVertical_bias="0.761"
+        app:srcCompat="@drawable/wrong" />
+
+    <Button
+        android:id="@+id/tryAgain"
+        android:layout_width="136dp"
+        android:layout_height="64dp"
+        android:background="@android:color/holo_blue_light"
+        android:onClick="PlayAgain"
+        android:text="START!"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wrongImage"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.SeekBar"
+        android:layout_width="338dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/myQuestions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
